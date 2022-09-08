@@ -12,7 +12,7 @@ public class MovimientoDinero {
     private String concepto;
     @ManyToOne
     @JoinColumn(name = "empleado_id")
-    private Empleado empleado;
+    private Empleado usuario;
     private String rol;
 
     public MovimientoDinero() {
@@ -21,7 +21,7 @@ public class MovimientoDinero {
     public MovimientoDinero(long monto, String concepto, Empleado empleado, String rol) {
         this.monto = monto;
         this.concepto = concepto;
-        this.empleado = empleado;
+        this.usuario = empleado;
         this.rol = rol;
     }
 
@@ -58,10 +58,10 @@ public class MovimientoDinero {
     }
 
     public Empleado getEmpleado() {
-        return empleado;
+        return usuario;
     }
 
     public void setEmpleado(Empleado empleado) {
-        this.empleado = empleado;
+        this.usuario = empleado;
     }
 }
