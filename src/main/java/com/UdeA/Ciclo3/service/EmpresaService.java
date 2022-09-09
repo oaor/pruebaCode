@@ -27,13 +27,21 @@ public class EmpresaService {
     }
 
     //Método para guardar o actualizar métodos de tipo Empresa
-    public boolean saveOrUpdateEmpresa (Empresa empresa){
-        Empresa emp=empresaRepository.save(empresa);
-        if (empresaRepository.findById (emp.getId()) != null){
+    public boolean saveOrUpdateEmpresa (Empresa empresa) {
+        Empresa emp = empresaRepository.save(empresa);
+        if (empresaRepository.findById(emp.getId()) != null) {
             return true;
+        }
+        return false;
     }
-    return false;
+    //Método Delete
+    public boolean deleteEmpresa(Integer id){
+        empresaRepository.deleteById(id);
+        if (getEmpresaById(id) != null){
 
-    //Método Delete pendiente
+            return false;
+        }
+        return true;
+    }
 
  }
