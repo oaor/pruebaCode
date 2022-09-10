@@ -3,11 +3,13 @@ package com.UdeA.Ciclo3.service;
 import com.UdeA.Ciclo3.modelos.Empresa;
 import com.UdeA.Ciclo3.repo.EmpresaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
 //Le decimos a spring que esta clase es de servicios
+
 @Service
 public class EmpresaService {
     @Autowired //conectamos esta clase con el repositorio de Empresa
